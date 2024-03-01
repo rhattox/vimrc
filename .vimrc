@@ -3,6 +3,9 @@ filetype plugin on
 filetype indent on
 syntax on
 
+set shiftwidth=2
+set tabstop=2
+
 set nocompatible
 set relativenumber
 set cursorline
@@ -22,15 +25,19 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 call plug#begin('~/.vim/plugged')
 
   Plug 'dense-analysis/ale'
-
+  Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'preservim/nerdtree'
 
 call plug#end()
 
 " }}}
 
+colorscheme dracula
+
 let mapleader = " "
-nnoremap <leader>pv :Ex<CR>
+nnoremap <C-n> :Ex<CR>
+
+:tnoremap <C-x> <C-\><C-n>
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -40,7 +47,7 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
+nnoremap <leader>x <C-w>q
 
 vnoremap H 0
 vnoremap L $
