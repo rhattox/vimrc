@@ -16,6 +16,9 @@ $ vim
 
 # Install all plugins
 :PlugInstall
+
+# Close vim
+# Open it again
 ```
 
 
